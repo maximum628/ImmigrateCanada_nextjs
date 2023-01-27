@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css?family=Lora&display=swap');
+
+.perspective {
+	perspective: 500px;
+	
+	.cube {
+		position: relative;
+		width: 300px;
+		height: 300px;
+		transform-style: preserve-3d;
+		transform: rotateX(-21deg) rotateY(28deg);
+		.face {
+			width: 300px;
+			height: 300px;
+			position: absolute;
+			transform-origin: 50% 50%;
+			// background: black;
+            background: linear-gradient(45deg,#ff0800,#ff080000);
+			border-radius: 5px;
+			
+			&-right {
+				transform: rotateY(90deg) translateZ(150px);
+			}
+			
+			&-left {
+				transform: rotateY(90deg) translateZ(-150px);
+			}
+			
+			&-front {
+				transform: translateZ(150px);
+			}
+			
+			&-back {
+				transform: translateZ(-150px);
+			}
+			
+			&-top {
+				transform: rotateX(90deg) translateZ(150px);
+			}
+			
+			&-bottom {
+				transform: rotateX(90deg) translateZ(-150px);
+			}
+			
+			//white panels
+			&-top,
+			&-front {
+				&::after {
+					position: absolute;
+					content: '';
+					top: 50%;
+					left: 50%;
+					transform: translate(-50%, -50%);
+					width: 90%;
+					height: 90%;
+					background-image:url(/assets/images/home/canadian-flag-design-template.jpg);
+                    background-size: 100% 100%;
+					border-radius: 10px;
+				}
+			}
+			
+			&-front {
+				&::after {
+					content: 'Immigration Canada';
+					font-size: 20px;
+					font-weight: bold;
+					text-align: center;
+				}
+			}
+		}
+		&__auto_animation{
+			animation-name: rotateaction;
+			animation-direction: alternate;
+			animation-iteration-count: infinite;
+			animation-duration: 10s;
+		}
+	}
+}
+
+@keyframes rotateaction{
+	0% {
+		transform: rotateX(0deg) rotateY(0deg);
+	}
+	25% {
+		transform: rotateX(3deg) rotateY(-3deg);
+	}
+	50% {
+		transform: rotateX(0deg) rotateY(0deg);
+	}
+	75% {
+		transform: rotateX(-3deg) rotateY(3deg);
+	}
+	100% {
+		transform: rotateX(0deg) rotateY(0deg);
+	}
+}

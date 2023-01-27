@@ -1,0 +1,131 @@
+.immigration__ {
+  &pre-loader,
+  &pre-loader__quick {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    // background: #ececec;
+    background-image: url(/assets/images/home/drew-beamer-kUHfMW8awpE-unsplash.jpg);
+    background-size: cover;
+    z-index: 99999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // display: none;
+  }
+
+  &pre-loader__wrap {
+    width: 100%;
+    padding: 0 50px;
+  }
+  &pre-loader__text {
+    margin-bottom: 100px;
+    margin-top: 150px;
+  }
+  &pre-loader__copy {
+    font-family: "Bugatti Display Regular", sans-serif, Arial;
+    font-size: 80px;
+    font-weight: 800;
+    width: 100%;
+    text-align: center;
+    color: #ff0800;
+    letter-spacing: 1.5px;
+  }
+  &progress_loader {
+    margin: 0 auto;
+    left: 0;
+    text-align: center;
+  }
+  &progress_loader-wrapper {
+    width: 900px;
+    height: 5px;
+    max-width: 100%;
+    background: gray;
+    display: inline-flex;
+    margin: 0 auto;
+    width: 900px;
+    height: 5px;
+    max-width: 100%;
+    background: gray;
+    display: inline-flex;
+    margin: 0 auto;
+  }
+  &progress_loader__loading {
+    width: 0;
+    background-color: #ff0800;
+  }
+  &progress_loader__info {
+    font-family: "Bugatti Monospace Regular";
+    color: rgb(75 75 75);
+    text-align: center;
+    margin: 20px 0;
+    font-size: 18px;
+    text-transform: uppercase;
+  }
+  &pre-loader__intro {
+    display: block;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 15%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+  }
+  &pre-loader__heading {
+    color: #ff0800;
+    font-size: 50px;
+    // text-transform: uppercase;
+    text-align: center;
+    transform: scale(0);
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .immigration__ {
+    &pre-loader__copy {
+      font-size: 14vw;
+    }
+    &pre-loader__heading {
+      font-size: 8vw;
+    }
+  }
+}
+@media screen and (max-width: 767px) {
+  .immigration__ {
+    &pre-loader__copy {
+      font-size: 55px;
+      letter-spacing: -2.5px;
+    }
+    &progress_loader {
+      position: absolute;
+      bottom: 100px;
+      width: 100%;
+      padding: 0 20px;
+    }
+    &progress_loader__info {
+      margin: 5px 0;
+    }
+    &pre-loader__wrap {
+      padding: 0 20px;
+    }
+  }
+}
+@media screen and (max-width: 320px) {
+  .immigration__ {
+    &pre-loader__copy {
+      font-size: 40px;
+    }
+  }
+}
+
+.immigration__pre-loader__wrap,
+.immigration__pre-loader__intro {
+  display: none;
+}
